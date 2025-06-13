@@ -1,26 +1,27 @@
 {
-  "name": "loicleprieur-expressjs",
-  "version": "1.0.0",
-  "description": "Backend for loic-leprieur.fr ",
-  "homepage": "https://github.com/loic-leprieur/loicleprieur-expressjs#readme",
-  "bugs": {
-    "url": "https://github.com/loic-leprieur/loicleprieur-expressjs/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/loic-leprieur/loicleprieur-expressjs.git"
-  },
-  "license": "ISC",
-  "author": "Loïc LEPRIEUR",
-  "type": "commonjs",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "dependencies": {
-    "cors": "^2.8.5",
-    "dotenv": "^16.5.0",
-    "express": "^5.1.0",
-    "mariadb": "^3.4.2"
-  }
+	"name": "loicleprieur-expressjs",
+	"version": "1.0.0",
+	"description": "Backend for loic-leprieur.fr ",
+	"homepage": "https://github.com/loic-leprieur/loicleprieur-expressjs#readme",
+	"bugs": {
+		"url": "https://github.com/loic-leprieur/loicleprieur-expressjs/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/loic-leprieur/loicleprieur-expressjs.git"
+	},
+	"license": "ISC",
+	"author": "Loïc LEPRIEUR",
+	"type": "commonjs",
+	"main": "server.js",
+	"scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+	},
+	"dependencies": {
+		"cors": "^2.8.5",
+		"dotenv": "^16.5.0",
+		"express": "^5.1.0",
+		"mariadb": "^3.4.2"
+	}
 }

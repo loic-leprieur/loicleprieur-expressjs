@@ -1,0 +1,26 @@
+name: Deploy backend to production server
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v4.1.4
+
+      - name: Install the dependencies
+        run: npm ci
+
+      - name: Build and Update production files
+        env:
+          SUPER_SECRET: ${{ secrets.SUDO_PASSWORD }}
+        run: |
+          npm run build
+          echo "$SUPER_SECRET" | sudo -S rsync -avz --delete --exclude '.htaccess' ./dist/ /var/www/www.loic-leprieur.fr/ || { echo 'rsync failed'; exit 1; }
+
+      - name: End message
+        run: echo 'Deployment ended!'
